@@ -1,8 +1,8 @@
 class Api::TopicsController < ApplicationController
   # model name -> Topic 
   # Who is the parent -> Sub 
-  before_action :set_topic, only: [:show, :update, :destroy]
   before_action :set_sub 
+  before_action :set_topic, only: [:show, :update, :destroy]
 
   def index
     # render json: Topic.all
