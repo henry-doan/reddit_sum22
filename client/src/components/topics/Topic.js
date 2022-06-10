@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import TopicForm from './TopicForm';
+import { Link } from 'react-router-dom';
 
 const Topic = ({ id, title, desc, updateTopic, deleteTopic }) => {
   const [editing, setEdit] = useState(false)
@@ -25,6 +26,9 @@ const Topic = ({ id, title, desc, updateTopic, deleteTopic }) => {
         <>
           <button onClick={() => setEdit(true)}>Edit</button>
           <button onClick={() => deleteTopic(id)}>Delete</button>
+          <Link to={`/${id}/comments`}>
+            Comments
+          </Link>
         </>
       }
     </>

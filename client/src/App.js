@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Nomatch from './components/shared/Nomatch';
 import Navbar from './components/shared/Navbar';
 import Topics from './components/topics/Topics';
+import Comments from './components/comments/Comments';
 
 // navgations routes, to go to mutiple pages
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
       <Route path='/about' element={<About />} />
       <Route path='/subs' element={<Subs />} />
       <Route path='/:subId/topics' element={<Topics />} />
+      <Route path='/:topicId/comments' element={<Comments />} />
       <Route path='/*' element={<Nomatch />} />
     </Routes>
     {/* Footer will go here */}
