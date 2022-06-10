@@ -2,9 +2,22 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import TopicForm from './TopicForm';
 import TopicList from './TopicList';
+import { useParams, useLocation } from 'react-router-dom';
 
-const Topics = ({ subId, subTitle }) => {
+// const Topics = ({ subId, subTitle }) => {
+const Topics = ({ }) => {
   const [topics, setTopics] = useState([])
+
+  // use only one
+  
+  // grab info from url 
+  const params = useParams()
+
+  // const { subId } = params
+
+  // to grab infor from the link state, read only
+  const location = useLocation()
+  const { subId, subTitle } = location.state
 
   useEffect( () => {
     // grab all topics from backend
